@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    tools:context=".MainActivity">
+
+    <!-- FULL SCREEN WALLPAPER: CARROS PIXAR -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.25"
+        android:contentDescription="@string/desc_carros_logo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/carros" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- TOP BANNER HEADER WITH CARROS LOGO & MCQUEEN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/desc_carros_logo"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/carros" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.08"
+                        android:text="@string/title_app_control"
+                        android:textColor="@color/mcqueen_yellow"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.05"
+                        android:text="@string/subtitle_app"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="42dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/desc_mcqueen"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/mcqueen" />
+            </LinearLayout>
+
+            <!-- LANDSCAPE 3-COLUMN GRID -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <!-- COLUNA 1: BLUETOOTH & EQUIPE (MATE) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- CARD 1: BLUETOOTH -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_card"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:contentDescription="@string/title_connect"
+                                android:src="@drawable/ic_bluetooth" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:text="@string/title_connect"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/viewStatusDot"
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:background="@drawable/ic_status_dot_red" />
+
+                                <TextView
+                                    android:id="@+id/tvBluetoothStatus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="@string/status_disconnected"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnConnect"
+                                android:layout_width="wrap_content"
+                                android:layout_height="38dp"
+                                android:paddingHorizontal="10dp"
+                                android:text="@string/btn_connect"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:backgroundTint="@color/mcqueen_yellow"
+                                app:cornerRadius="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- CARD 6: EQUIPE RUST-EZE (MATE) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="28dp"
+                                android:contentDescription="@string/desc_mate"
+                                android:src="@drawable/mate" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:text="@string/title_team"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnEditTeam"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:paddingHorizontal="6dp"
+                                android:text="@string/btn_edit_team"
+                                android:textColor="@color/mcqueen_yellow"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvTeamMembers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:background="#DD1B0D0E"
+                            android:lineSpacingExtra="2dp"
+                            android:padding="8dp"
+                            android:text="@string/default_team_members"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- COLUNA 2: D-PAD CONTROLLER EXPANDIDO & BUZINA -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- CARD 2: DIREÇÕES D-PAD EXPANDIDO -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_card"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:contentDescription="@string/title_directions"
+                                android:src="@drawable/ic_directions" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@string/title_directions"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- D-PAD GRID CONTROLS EXPANDIDO -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="185dp"
+                            android:layout_marginTop="6dp">
+
+                            <!-- FRENTE (FORWARD) -->
+                            <ImageButton
+                                android:id="@+id/btnForward"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:background="@drawable/bg_direction_button"
+                                android:contentDescription="@string/btn_forward"
+                                android:src="@drawable/ic_arrow_up"
+                                app:layout_constraintBottom_toTopOf="@id/btnStop"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <!-- ESQUERDA (LEFT) -->
+                            <ImageButton
+                                android:id="@+id/btnLeft"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:background="@drawable/bg_direction_button"
+                                android:contentDescription="@string/btn_left"
+                                android:src="@drawable/ic_arrow_left"
+                                app:layout_constraintBottom_toBottomOf="@id/btnStop"
+                                app:layout_constraintEnd_toStartOf="@id/btnStop"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/btnStop" />
+
+                            <!-- PARAR BOX (STOP BUTTON LIMPO) -->
+                            <ImageButton
+                                android:id="@+id/btnStop"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:background="@drawable/bg_stop_button"
+                                android:contentDescription="@string/btn_stop"
+                                android:padding="14dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_stop"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <!-- DIREITA (RIGHT) -->
+                            <ImageButton
+                                android:id="@+id/btnRight"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:background="@drawable/bg_direction_button"
+                                android:contentDescription="@string/btn_right"
+                                android:src="@drawable/ic_arrow_right"
+                                app:layout_constraintBottom_toBottomOf="@id/btnStop"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/btnStop"
+                                app:layout_constraintTop_toTopOf="@id/btnStop" />
+
+                            <!-- TRÁS (BACKWARD) -->
+                            <ImageButton
+                                android:id="@+id/btnBackward"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:background="@drawable/bg_direction_button"
+                                android:contentDescription="@string/btn_backward"
+                                android:src="@drawable/ic_arrow_down"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/btnStop" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+
+                    <!-- CARD 5: BUZINA KATCHOW! (WITH MATE ICON) -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnHorn"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_horn_button"
+                        android:text="@string/btn_horn"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@null"
+                        app:icon="@drawable/mate"
+                        app:iconGravity="textStart"
+                        app:iconPadding="8dp"
+                        app:iconSize="28dp"
+                        app:iconTint="@null" />
+                </LinearLayout>
+
+                <!-- COLUNA 3: VELOCIDADE (STORM) & ROSTOS DE LED -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- CARD 3: VELOCIDADE (JACKSON STORM) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_card"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="24dp"
+                                android:contentDescription="@string/desc_storm"
+                                android:src="@drawable/storm" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:text="@string/title_speed"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvSpeedValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/mcqueen_yellow"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:text="50% HP" />
+                        </LinearLayout>
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/sliderSpeed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:stepSize="5.0"
+                            android:value="50.0"
+                            android:valueFrom="0.0"
+                            android:valueTo="100.0"
+                            app:haloColor="#55FFD700"
+                            app:thumbColor="@color/mcqueen_yellow"
+                            app:trackColorActive="@color/mcqueen_yellow"
+                            app:trackColorInactive="@color/mcqueen_red_dark" />
+
+                        <!-- PRESET SPEED BUTTONS -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnSpeed25"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="2dp"
+                                android:layout_weight="1"
+                                android:paddingHorizontal="2dp"
+                                android:text="@string/preset_25"
+                                android:textColor="@color/text_primary"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp"
+                                app:backgroundTint="@color/btn_preset_bg"
+                                app:strokeColor="@color/mcqueen_yellow" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnSpeed50"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_marginHorizontal="2dp"
+                                android:layout_weight="1"
+                                android:paddingHorizontal="2dp"
+                                android:text="@string/preset_50"
+                                android:textColor="@color/text_primary"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp"
+                                app:backgroundTint="@color/btn_preset_bg"
+                                app:strokeColor="@color/mcqueen_yellow" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnSpeed100"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="2dp"
+                                android:layout_weight="1"
+                                android:paddingHorizontal="2dp"
+                                android:text="@string/preset_100"
+                                android:textColor="@color/mcqueen_yellow"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp"
+                                android:textStyle="bold"
+                                app:backgroundTint="@color/btn_preset_bg"
+                                app:icon="@drawable/storm"
+                                app:iconGravity="textStart"
+                                app:iconPadding="2dp"
+                                app:iconSize="16dp"
+                                app:iconTint="@null"
+                                app:strokeColor="@color/mcqueen_yellow" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- CARD 4: ROSTOS DE LED -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:contentDescription="@string/title_led_faces"
+                                android:src="@drawable/ic_face" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@string/title_led_faces"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:scrollbars="none">
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/chipGroupFaces"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:singleLine="true"
+                                app:singleSelection="true">
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipHappy"
+                                    style="@style/Widget.Material3.Chip.Filter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="36dp"
+                                    android:checked="true"
+                                    android:text="@string/face_happy"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="11sp"
+                                    app:chipBackgroundColor="@color/btn_direction"
+                                    app:chipStrokeColor="@color/mcqueen_yellow" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipSad"
+                                    style="@style/Widget.Material3.Chip.Filter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="36dp"
+                                    android:text="@string/face_sad"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="11sp"
+                                    app:chipBackgroundColor="@color/btn_direction"
+                                    app:chipStrokeColor="@color/mcqueen_yellow" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipAngry"
+                                    style="@style/Widget.Material3.Chip.Filter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="36dp"
+                                    android:text="@string/face_angry"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="11sp"
+                                    app:chipBackgroundColor="@color/btn_direction"
+                                    app:chipStrokeColor="@color/mcqueen_yellow" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipHeart"
+                                    style="@style/Widget.Material3.Chip.Filter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="36dp"
+                                    android:text="@string/face_heart"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="11sp"
+                                    app:chipBackgroundColor="@color/btn_direction"
+                                    app:chipStrokeColor="@color/mcqueen_yellow" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipBlink"
+                                    style="@style/Widget.Material3.Chip.Filter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="36dp"
+                                    android:text="@string/face_blink"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="11sp"
+                                    app:chipBackgroundColor="@color/btn_direction"
+                                    app:chipStrokeColor="@color/mcqueen_yellow" />
+                            </com.google.android.material.chip.ChipGroup>
+                        </HorizontalScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Katchal McQueen #95</string>
+
+    <!-- Headers -->
+    <string name="title_app_control">⚡ KATCHOW! MCQUEEN #95 ⚡</string>
+    <string name="subtitle_app">PISTON CUP • CONTROLE DE NAVEGAÇÃO ESP32-C3</string>
+
+    <!-- Bluetooth Card -->
+    <string name="title_connect">Conexão Bluetooth Pit Stop</string>
+    <string name="btn_connect">Conectar</string>
+    <string name="btn_disconnect">Desconectar</string>
+    <string name="status_disconnected">Desconectado do Box</string>
+    <string name="status_connecting">Conectando ao Robô…</string>
+    <string name="status_connected">Pit Stop Pronto (%1$s)</string>
+    <string name="select_device_title">Selecione o Robô Katchal McQueen (ESP32-C3)</string>
+
+    <!-- Directions Card -->
+    <string name="title_directions">Piloto de Corrida (Direções)</string>
+    <string name="btn_forward">Frente</string>
+    <string name="btn_backward">Trás</string>
+    <string name="btn_left">Esquerda</string>
+    <string name="btn_right">Direita</string>
+    <string name="btn_stop">PARAR BOX</string>
+
+    <!-- Speed Card -->
+    <string name="title_speed">Velocidade do Motor (#95)</string>
+    <string name="speed_format">Velocidade: %1$d%% HP</string>
+    <string name="preset_25">🐢 25% Box</string>
+    <string name="preset_50">🚗 50% Pista</string>
+    <string name="preset_100">⚡ 100% Storm Turbo</string>
+
+    <!-- LED Faces Card -->
+    <string name="title_led_faces">Expressões do McQueen (LED)</string>
+    <string name="face_happy">😀 Campeão</string>
+    <string name="face_sad">😢 Furo Pneu</string>
+    <string name="face_angry">😡 Modo Foco</string>
+    <string name="face_heart">❤️ Rust-eze</string>
+    <string name="face_blink">😉 Piscar #95</string>
+
+    <!-- Horn Card -->
+    <string name="title_horn">Buzina KATCHOW! ⚡</string>
+    <string name="btn_horn">🔊 KATCHOW! BUZINAR</string>
+
+    <!-- Team Card -->
+    <string name="title_team">Equipe Rust-eze Racing</string>
+    <string name="default_team_members">Equipe Rust-eze Racing:\n• Diether Fabricio\n• Josue Kaleb\n• Lucas Leonardo\n• Ryan Marques\n• Yostin Alexander</string>
+    <string name="btn_edit_team">Editar Equipe</string>
+    <string name="edit_team_dialog_title">Equipe Rust-eze Racing</string>
+    <string name="save">Salvar</string>
+    <string name="cancel">Cancelar</string>
+
+    <!-- Character Image Descriptions -->
+    <string name="desc_carros_logo">Logo Carros Pixar</string>
+    <string name="desc_mcqueen">Relâmpago McQueen #95</string>
+    <string name="desc_mate">Mate Tow Mater</string>
+    <string name="desc_storm">Jackson Storm</string>
+
+    <!-- Toast & Messages -->
+    <string name="msg_bluetooth_not_available">Bluetooth não suportado neste dispositivo.</string>
+    <string name="msg_bluetooth_disabled">Por favor, ative o Bluetooth.</string>
+    <string name="msg_no_paired_devices">Nenhum robô Katchal pareado encontrado.</string>
+    <string name="msg_connection_failed">Falha ao conectar com o robô.</string>
+    <string name="msg_permission_required">Permissão de Bluetooth necessária.</string>
+</resources>
